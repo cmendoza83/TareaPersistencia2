@@ -1,0 +1,58 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.cynthia.patagramtarea.fragment.AdicionalFragment"
+    android:orientation="vertical">
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical"
+
+             >
+
+             <com.mikhaellopez.circularimageview.CircularImageView
+                 android:id="@+id/imgCircular"
+                 android:layout_width="100dp"
+                 android:layout_height="100dp"
+                 android:src="@drawable/dog_2"
+                 app:civ_border_color="#EEEEEE"
+                 app:civ_border_width="1dp"
+                 app:civ_shadow="false"
+                 app:civ_shadow_radius="10"
+                 app:civ_shadow_color="#8BC34A"
+                 android:layout_gravity="center_horizontal"
+
+             />
+
+
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center_horizontal"
+                 android:textAlignment="center"
+                 android:textSize="25sp"
+                 android:text="Benigno"
+                 />
+
+
+                 <android.support.v7.widget.RecyclerView
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:id="@+id/rvFotos"
+                     android:scrollbars="vertical"
+                     >
+
+                 </android.support.v7.widget.RecyclerView>
+
+
+         </LinearLayout>
+
+
+
+
+     </LinearLayout>
+
+

@@ -1,4 +1,4 @@
-package com.example.cynthia.patagramtarea;
+package com.example.cynthia.patagramtarea.adapter;
 
 import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
@@ -8,11 +8,16 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.cynthia.patagramtarea.bd.ConstructorMascotas;
+import com.example.cynthia.patagramtarea.pojo.Mascota;
+import com.example.cynthia.patagramtarea.R;
 
 import java.util.ArrayList;
 
 /**
- * Created by cynthia on 02-10-16.
+ * Created by Cesar on 02-10-16.
  */
 
 public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.MascotaViewHolder>{
@@ -44,11 +49,17 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
             @Override
             public void onClick(View v) {
                 mascota.setPuntuacion(mascota.getPuntuacion()+1);
-                mascotaViewHolder.tvPuntos.setText(String.valueOf(mascota.getPuntuacion()));            }
+                mascotaViewHolder.tvPuntos.setText(String.valueOf(mascota.getPuntuacion()));
+
+                ConstructorMascotas constructorMascotas = new ConstructorMascotas(activity);
+                // actualizar tabla BD Mascotas con Likes
+                constructorMascotas.darLikeMascota(mascota);
+
+                Toast.makeText(activity,"Diste Like a "+ mascota.getNombre(), Toast.LENGTH_SHORT).show();
+
+            }
         }
-
         );
-
 
 
     }

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">PatagramTarea</string>
+
+    <string name="Bio">Durante la última década los desarrollos de aplicacioness se han visto nutridos por el gran aporte de este ilustre programador de la vida.
+    </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

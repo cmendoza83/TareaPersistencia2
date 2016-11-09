@@ -7,9 +7,13 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
+import com.example.cynthia.patagramtarea.adapter.MascotaAdaptador;
+import com.example.cynthia.patagramtarea.bd.ConstructorMascotas;
+import com.example.cynthia.patagramtarea.pojo.Mascota;
+
 import java.util.ArrayList;
 
-public class ranking extends AppCompatActivity {
+public class RankingMascotas extends AppCompatActivity {
 
     ArrayList<Mascota> mascotas;
     private RecyclerView rvMascotas;
@@ -20,19 +24,17 @@ public class ranking extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ranking);
+        this.setTitle("Ranking Mascotas");
 
         toolbar = (Toolbar) findViewById(R.id.toolBar);
+
         setSupportActionBar(toolbar);
 
-        mascotas = new ArrayList<Mascota>();
+       // getActionBar().setDisplayHomeAsUpEnabled(true);
 
-        mascotas.add(new Mascota(R.drawable.dog_4,"Benigno",15));
-        mascotas.add(new Mascota(R.drawable.monkey_1,"Socrates",12));
-        mascotas.add(new Mascota(R.drawable.dog_3,"Bronco",10));
-        mascotas.add(new Mascota(R.drawable.mouse_1,"Jerry",7));
-        mascotas.add(new Mascota(R.drawable.dog_1,"Braulio",6));
-        mascotas.add(new Mascota(R.drawable.dog_2,"Rambo",3));
-        mascotas.add(new Mascota(R.drawable.cat_1,"Virgilio",1));
+        ConstructorMascotas constructorMascotas = new ConstructorMascotas(this.getApplicationContext());
+        mascotas = constructorMascotas.obtenerRankingMascotas();
+
 
         rvMascotas = (RecyclerView) findViewById(R.id.rvMascotas);
 
@@ -43,7 +45,6 @@ public class ranking extends AppCompatActivity {
 
         MascotaAdaptador adaptador = new MascotaAdaptador(mascotas,this);
         rvMascotas.setAdapter(adaptador);
-
 
 
     }
